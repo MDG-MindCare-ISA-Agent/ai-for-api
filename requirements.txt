@@ -2,6 +2,7 @@
 transformers==4.54.0         # HuggingFace 모델 사용
 konlpy==0.6.0                # 한국어 형태소 분석기 (Okt)
 requests==2.32.4             # Clova API 등 외부 호출용
+torch==2.7.1
 
 # ✅ FastAPI 서버용
 fastapi==0.116.1             # API 서버 구성 시
@@ -38,7 +39,6 @@ python-dotenv==1.1.1         # .env 파일 관리
 # starlette==0.47.2
 # sympy==1.14.0
 # tokenizers==0.21.4
-# torch==2.7.1
 # tqdm==4.67.1
 # typing-inspection==0.4.1
 # typing_extensions==4.14.1
