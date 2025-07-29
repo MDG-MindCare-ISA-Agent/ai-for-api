@@ -1,7 +1,9 @@
 # emotion_service.py
 from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 from konlpy.tag import Okt
-import re, requests, uuid
+import re, requests, uuid, os
+from dotenv import load_dotenv
+load_dotenv()
 
 # 감정 분석 모델 로딩
 emotion_model = "dlckdfuf141/korean-emotion-kluebert-v2"
@@ -10,8 +12,9 @@ model = AutoModelForSequenceClassification.from_pretrained(emotion_model)
 emotion_classifier = pipeline("text-classification", model=model, tokenizer=tokenizer)
 okt = Okt()
 
+
 # Clova API 설정
-CLOVA_API_KEY = "nv-8bde2bcde8f2486c93f209120119a3728S16"
+CLOVA_API_KEY = os.getenv("CLOVA_API_KEY")
 API_URL = "https://clovastudio.stream.ntruss.com/v3/chat-completions/HCX-005"
 HEADERS = {
     "Content-Type": "application/json; charset=utf-8",
